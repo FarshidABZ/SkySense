@@ -32,7 +32,7 @@ For this assignment, I chose a **Monorepo Configuration** with a **Single Shared
   - `presentation/` ViewModels and UI models
 
 <p align="center">
-  <img src="screenshots/single_module.png" alt="Single module configuration" width="30%"/>
+  <img src="screenshots/single_module.png" alt="Single module configuration" width="70%"/>
 </p>
 *(Visual representation of the Single Shared Module structure)*
 
@@ -47,7 +47,7 @@ For this assignment, I chose a **Monorepo Configuration** with a **Single Shared
 I evaluated splitting the project into multiple feature modules (e.g., `:shared:cities`, `:shared:weatherDetail`, `:shared:core`) but decided against it for this specific deliverable.
 
 <p align="center">
-  <img src="screenshots/several_module.png" alt="Several shared modules" width="30%"/>
+  <img src="screenshots/several_module.png" alt="Several shared modules" width="70%"/>
 </p>
 *(Visual representation of the Feature-Based Modularization structure)*
 
