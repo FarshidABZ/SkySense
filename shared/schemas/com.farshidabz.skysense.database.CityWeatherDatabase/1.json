@@ -1,0 +1,241 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "6e54fc258f09b0ec39081e230ef0c37e",
+    "entities": [
+      {
+        "tableName": "city_weather",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`name` TEXT NOT NULL, `temperature` REAL NOT NULL, `country` TEXT NOT NULL, `windSpeed` REAL NOT NULL, `humidity` INTEGER NOT NULL, `pressure` INTEGER NOT NULL, `conditionText` TEXT NOT NULL, `conditionIcon` TEXT NOT NULL, `conditionCode` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL, PRIMARY KEY(`name`))",
+        "fields": [
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "temperature",
+            "columnName": "temperature",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "country",
+            "columnName": "country",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "windSpeed",
+            "columnName": "windSpeed",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "humidity",
+            "columnName": "humidity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressure",
+            "columnName": "pressure",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conditionText",
+            "columnName": "conditionText",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conditionIcon",
+            "columnName": "conditionIcon",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conditionCode",
+            "columnName": "conditionCode",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "name"
+          ]
+        }
+      },
+      {
+        "tableName": "city_weather_detail",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`cityName` TEXT NOT NULL, `temperature` REAL NOT NULL, `minTemp` REAL NOT NULL, `maxTemp` REAL NOT NULL, `humidity` INTEGER NOT NULL, `pressureMb` REAL NOT NULL, `windKph` REAL NOT NULL, `visibilityKm` REAL NOT NULL, `conditionText` TEXT NOT NULL, `conditionIcon` TEXT NOT NULL, `conditionCode` INTEGER NOT NULL, PRIMARY KEY(`cityName`))",
+        "fields": [
+          {
+            "fieldPath": "cityName",
+            "columnName": "cityName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "temperature",
+            "columnName": "temperature",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "minTemp",
+            "columnName": "minTemp",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "maxTemp",
+            "columnName": "maxTemp",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "humidity",
+            "columnName": "humidity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pressureMb",
+            "columnName": "pressureMb",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "windKph",
+            "columnName": "windKph",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "visibilityKm",
+            "columnName": "visibilityKm",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conditionText",
+            "columnName": "conditionText",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conditionIcon",
+            "columnName": "conditionIcon",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conditionCode",
+            "columnName": "conditionCode",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "cityName"
+          ]
+        }
+      },
+      {
+        "tableName": "city_forecast",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cityName` TEXT NOT NULL, `dayOfWeek` TEXT NOT NULL, `maxTempC` REAL NOT NULL, `minTempC` REAL NOT NULL, `conditionIcon` TEXT NOT NULL, `conditionCode` INTEGER NOT NULL, FOREIGN KEY(`cityName`) REFERENCES `city_weather_detail`(`cityName`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cityName",
+            "columnName": "cityName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dayOfWeek",
+            "columnName": "dayOfWeek",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "maxTempC",
+            "columnName": "maxTempC",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "minTempC",
+            "columnName": "minTempC",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conditionIcon",
+            "columnName": "conditionIcon",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "conditionCode",
+            "columnName": "conditionCode",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_city_forecast_cityName",
+            "unique": false,
+            "columnNames": [
+              "cityName"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_city_forecast_cityName` ON `${TABLE_NAME}` (`cityName`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "city_weather_detail",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "cityName"
+            ],
+            "referencedColumns": [
+              "cityName"
+            ]
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6e54fc258f09b0ec39081e230ef0c37e')"
+    ]
+  }
+}

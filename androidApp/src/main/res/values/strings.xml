@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">SkySense</string>
+    <string name="locations">Locations</string>
+    <string name="temperature_format">%1$s°</string>
+
+    <!-- Detail screen strings -->
+    <string name="cd_weather_condition">Weather condition</string>
+    <string name="max_min_temp_format">Max. %1$d°, min. %2$d°</string>
+    <string name="label_humidity">Humidity</string>
+    <string name="label_air_pressure">Air pressure</string>
+    <string name="label_wind">Wind</string>
+    <string name="label_visibility">Visibility</string>
+    <string name="format_percent">%1$d%%</string>
+    <string name="format_hpa">%1$d hPa</string>
+    <string name="format_kmh">%1$d km/h</string>
+    <string name="format_km">%1$d km</string>
+
+    <!-- Network error messages -->
+    <string name="error_no_internet">No internet connection. Please check your network and try again.</string>
+    <string name="error_timeout">The request timed out. Please try again.</string>
+    <string name="error_ssl_handshake">Secure connection failed. Please try again.</string>
+    <string name="error_cancelled">Request was cancelled.</string>
+    <string name="error_unauthorized">You are not authorized. Please sign in again.</string>
+    <string name="error_forbidden">You don’t have permission to access this resource.</string>
+    <string name="error_not_found">Requested resource not found.</string>
+    <string name="error_too_many_requests">Too many requests. Please try again later.</string>
+    <string name="error_client">There was a problem with your request.</string>
+    <string name="error_server_unavailable">Service is temporarily unavailable. Please try again later.</string>
+    <string name="error_server">Server error occurred. Please try again later.</string>
+    <string name="error_serialization">Received unexpected data. Please try again.</string>
+    <string name="error_unknown">Something went wrong. Please try again.</string>
+</resources>
